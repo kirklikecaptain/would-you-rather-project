@@ -1,4 +1,7 @@
 .poll-card {
+  display: block;
+  text-decoration: none;
+  color: #333;
   margin-top: 20px;
   background: white;
   border-radius: 3px;
@@ -28,11 +31,11 @@
 
 .option-one:after {
   content: 'or';
+  font-size: 16px;
   position: absolute;
-  right: -24px;
-  padding: 14px;
-  width: 20px;
-  height: 20px;
+  right: -20px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: white;
   color: black;
@@ -46,12 +49,18 @@
   background: #999;
 }
 
+.poll-data {
+  padding: 15px 20px 20px 20px;
+}
+
 .poll-votes {
   text-align: center;
+  font-size: 25px;
+  margin: 0px;
 }
 
 .poll-info {
-  padding: 0px 14px;
+  margin: 0px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -59,8 +68,12 @@
 
 .card-avatar {
   display: inline-block;
-  width: 24px;
-  height: 24px;
-  border-radius: 12px;
-  margin: 0px 5px -6px 0px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin: 0px 10px -9px 0px;
+}
+
+.submit-date {
+  color: #999;
 }

@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux'
-import '../css/_base.css';
-import '../css/App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Nav from './Nav'
+import PollPage from './PollPage'
+import NewPoll from './NewPoll'
 import ListNewPolls from './ListNewPolls'
 import { handleInitialData } from '../actions/shared'
+import '../css/_base.css';
+import '../css/App.css';
 
 class App extends Component {
 
@@ -14,12 +17,23 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Nav />
-        <ListNewPolls />
-      </div>
+      <Router>
+        <Fragment>
+          <Nav />
+          <Route path='/' exact component={ListNewPolls} />
+          <Route path='/poll/:id' component={PollPage} />
+          <Route path='/new' component={NewPoll} />
+        </Fragment>
+      </Router>
     );
   }
 }
 
-export default connect()(App)
+function mapStateToProps ({ authedUser }) {
+  return {
+    loading: authedUser === null
+  }
+}
+
+
+export default connect(mapStateToProps)(App)
