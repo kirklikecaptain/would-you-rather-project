@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
 import { formatDate, formatQuestion } from '../api/api'
-import '../css/_base.css';
 import '../css/Poll.css';
 
 class Poll extends Component {

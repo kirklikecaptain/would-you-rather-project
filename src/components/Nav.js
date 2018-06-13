@@ -1,26 +1,31 @@
-import React, { Component } from 'react';
-import '../css/_base.css';
-import '../css/Nav.css';
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import '../css/_base.css'
+import '../css/Nav.css'
 
-class Nav extends Component {
-  render() {
-    return (
-      <nav className='nav'>
-        <div className='container nav-container'>
-          <ul className='nav-bar'>
-            <li>
-              <a className='nav-link' href="https://google.com">
-                link
-              </a>
-            </li>
-          </ul>
-          <a className='nav-link' href="https://google.com">
-            Sign in
-          </a>
-        </div>
-      </nav>
-    )
-  }
+function Nav () {
+  return (
+    <nav className='nav'>
+      <div className='container nav-container'>
+        <ul className='nav-bar'>
+          <li>
+            <NavLink to='/' exact className='nav-link' activeClassName='active'>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/new' exact className='nav-link' activeClassName='active'>
+              New Poll
+            </NavLink>
+          </li>
+        </ul>
+        <NavLink to='/signin' exact className='nav-link' activeClassName='active'>
+          Sign in
+        </NavLink>
+      </div>
+    </nav>
+  )
 }
 
-export default Nav;
+
+export default Nav

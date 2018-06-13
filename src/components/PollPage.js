@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Poll from './Poll'
-import '../css/_base.css';
 import '../css/PollPage.css';
 
 class PollPage extends Component {

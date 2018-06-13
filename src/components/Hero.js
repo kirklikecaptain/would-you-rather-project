@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import '../css/_base.css';
 import '../css/Hero.css';
 
 class Hero extends PureComponent {

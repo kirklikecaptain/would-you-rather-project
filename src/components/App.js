@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { handleInitialData } from '../actions/shared'
 import Nav from './Nav'
 import PollPage from './PollPage'
 import NewPoll from './NewPoll'
 import ListNewPolls from './ListNewPolls'
-import { handleInitialData } from '../actions/shared'
+import LoadingBar from 'react-redux-loading-bar'
 import '../css/_base.css';
 import '../css/App.css';
 
@@ -19,13 +20,18 @@ class App extends Component {
     return (
       <Router>
         <Fragment>
+          <LoadingBar />
           <Nav />
-          <Route path='/' exact component={ListNewPolls} />
-          <Route path='/poll/:id' component={PollPage} />
-          <Route path='/new' component={NewPoll} />
+          {this.props.loading === true
+            ? null
+            : <div>
+                <Route path='/' exact component={ListNewPolls} />
+                <Route path='/poll/:id' component={PollPage} />
+                <Route path='/new' component={NewPoll} />
+              </div>}
         </Fragment>
       </Router>
-    );
+    )
   }
 }
 
