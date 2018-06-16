@@ -13,6 +13,10 @@
   display: flex;
 }
 
+.poll-link {
+  text-decoration: none;
+}
+
 .option-one, .option-two {
   width: 50%;
   padding: 60px;

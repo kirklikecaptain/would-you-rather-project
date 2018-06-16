@@ -1,7 +1,10 @@
 import {
   _getUsers,
-  _getQuestions
+  _getQuestions,
+  _saveQuestion,
+  // _saveQuestionAnswer,
 } from './_DATA'
+
 
 export function getInitialData () {
   return Promise.all([
@@ -11,6 +14,10 @@ export function getInitialData () {
     users,
     questions,
   }))
+}
+
+export function saveQuestion (question) {
+  return _saveQuestion(question)
 }
 
 export function formatDate (timestamp) {
@@ -24,32 +31,12 @@ export function formatQuestion (question, author) {
   const { name, avatarURL } = author
 
   return {
-    name,
-    avatarURL,
     id,
     timestamp,
+    name,
+    avatarURL,
     optionOne,
     optionTwo
   }
 }
 
-
-// export function formatTweet (tweet, author, authedUser, parentTweet) {
-//   const { id, likes, replies, text, timestamp } = tweet
-//   const { name, avatarURL } = author
-
-//   return {
-//     name,
-//     id,
-//     timestamp,
-//     text,
-//     avatar: avatarURL,
-//     likes: likes.length,
-//     replies: replies.length,
-//     hasLiked: likes.includes(authedUser),
-//     parent: !parentTweet ? null : {
-//       author: parentTweet.author,
-//       id: parentTweet.id,
-//     }
-//   }
-// }

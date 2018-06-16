@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Poll from './Poll'
+import Hero from './Hero'
+import Vote from './Vote'
 import '../css/PollPage.css';
 
 class PollPage extends Component {
@@ -8,8 +10,13 @@ class PollPage extends Component {
     console.log(this.props)
     const { id } = this.props
     return (
-      <div className='container'>
-        <Poll id={id} />
+      <div>
+        <Hero />
+        <div className='container'>
+          <Poll id={id}>
+            <Vote id={id} />
+          </Poll>
+        </div>
       </div>
     )
   }

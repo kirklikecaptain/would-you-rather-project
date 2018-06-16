@@ -1,0 +1,13 @@
+.vote-box {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0px;
+}
+
+.vote-button {
+  z-index: 1000;
+}
+
+.first-op {
+  background: red;
+}

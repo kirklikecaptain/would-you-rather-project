@@ -14,21 +14,26 @@ class Poll extends Component {
       return <p>This does not exist</p>
     }
 
-
     return (
-      <Link to={`/poll/${id}`} className='poll-card'>
-        <div className='poll-options'>
-          <div className='option-one'>{optionOne.text}</div>
-          <div className='option-two'>{optionTwo.text}</div>
-        </div>
+      <div className='poll-card'>
         <div className='poll-data'>
           <p className='poll-info'><span><img className='card-avatar' src={avatarURL} alt={name} /><span>{name}</span></span><span className='submit-date'>{formatDate(timestamp)}</span></p>
         </div>
-      </Link>
+        <Link to={`/poll/${id}`} className='poll-link'>
+          <div className='poll-options'>
+            <div className='option-one'>
+              {optionOne.text}
+            </div>
+            <div className='option-two'>
+              {optionTwo.text}
+            </div>
+          </div>
+        </Link>
+        {this.props.children}
+      </div>
     )
   }
 }
-
 
 function mapStateToProps({authedUser, users, questions}, { id }) {
   const question = questions[id]
