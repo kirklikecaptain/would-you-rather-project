@@ -7,8 +7,8 @@ import '../css/PollPage.css';
 
 class PollPage extends Component {
   render() {
-    console.log(this.props)
     const { id } = this.props
+
     return (
       <div>
         <Hero />
@@ -25,9 +25,7 @@ class PollPage extends Component {
 function mapStateToProps({ authedUser, questions, users }, props) {
   const { id } = props.match.params
 
-  return {
-    id
-  }
+  return { id }
 }
 
 export default connect(mapStateToProps)(PollPage)

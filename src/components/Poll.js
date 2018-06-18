@@ -17,15 +17,17 @@ class Poll extends Component {
     return (
       <div className='poll-card'>
         <div className='poll-data'>
-          <p className='poll-info'><span><img className='card-avatar' src={avatarURL} alt={name} /><span>{name}</span></span><span className='submit-date'>{formatDate(timestamp)}</span></p>
+          <p className='poll-info'><span><img className='card-avatar' src={avatarURL} alt={name} /><span>{name} wonders...</span></span><span className='submit-date'>{formatDate(timestamp)}</span></p>
         </div>
         <Link to={`/poll/${id}`} className='poll-link'>
           <div className='poll-options'>
             <div className='option-one'>
               {optionOne.text}
+              {optionOne.votes.length}
             </div>
             <div className='option-two'>
               {optionTwo.text}
+              {optionTwo.votes.length}
             </div>
           </div>
         </Link>

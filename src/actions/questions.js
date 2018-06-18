@@ -1,4 +1,4 @@
-import { saveQuestion } from '../api/api'
+import { saveQuestion, saveQuestionAnswer } from '../api/api'
 import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
@@ -43,3 +43,25 @@ export function handleAddQuestion (optionOneText, optionTwoText) {
 }
 
 
+export function handleAnswerQuestion (qid, answer) {
+  return (dispatch, getState) => {
+
+    const { authedUser } = getState()
+    const question = {
+      authedUser,
+      qid,
+      answer
+    }
+
+    console.log(question)
+
+    dispatch(answerQuestion(question))
+
+    return saveQuestionAnswer(question)
+      .catch((e) => {
+        console.warn('Error in handleAnswerquestion: ', e)
+        alert('There was an error answering this poll. Please try again.')
+      })
+
+  }
+}
