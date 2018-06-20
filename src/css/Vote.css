@@ -1,17 +1,28 @@
 .vote-box {
   display: flex;
   justify-content: space-around;
-  padding: 20px 0px;
+  padding: 16px 0px;
 }
 
 .vote-button {
   z-index: 100;
+  cursor: pointer;
 }
 
 .first-op {
-  background: #d32f2f;
+  background: #00ACC1;
+}
+
+.first-op:hover {
+  background: #26C6DA;
+  transform: translateY(-1px);
 }
 
 .second-op {
-  background: #0097A7;
+  background: #5E35B1;
+}
+
+.second-op:hover {
+  background: #7E57C2;
+  transform: translateY(-1px);
 }

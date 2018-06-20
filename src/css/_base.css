@@ -12,16 +12,16 @@
 }
 
 hr {
-  display: block;
+    display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
+    border-top: 1px solid #ddd;
+    margin:  0;
     padding: 0;
 }
 
 button {
-  background: #FB8C00;
+  background: #2196F3;
   color: white;
   border: none;
   border-radius: 3px;
@@ -29,7 +29,7 @@ button {
 }
 
 button:disabled {
-  background: #FFE0B2;
+  background: #E3F2FD;
 }
 
 .left-align {

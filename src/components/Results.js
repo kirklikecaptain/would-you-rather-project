@@ -10,7 +10,8 @@ class Results extends Component {
     return (
       <div className='scoreboard'>
         <div className='score-col'>
-          <p className="center-text">{optionOne.votes.length} Vote{!optionOne.votes.length === 1 && 's'}</p>
+          <p className="center-text">{optionOne.votes.length} Vote{optionOne.votes.length !== 1 && 's'}</p>
+          <hr/>
           <ul>
             {optionOne.votes.map((user) => (
                 <li key={user}>
@@ -20,7 +21,8 @@ class Results extends Component {
           </ul>
         </div>
         <div className='score-col'>
-          <p className="center-text">{optionTwo.votes.length} Vote{!optionOne.votes.length === 1 && 's'}</p>
+          <p className="center-text">{optionTwo.votes.length} Vote{optionTwo.votes.length !== 1 && 's'}</p>
+          <hr/>
           <ul>
             {optionTwo.votes.map((user) => (
               <li key={user}>

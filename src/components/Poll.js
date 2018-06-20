@@ -18,15 +18,18 @@ class Poll extends Component {
       <div className='poll-card'>
         <div className='poll-data'>
           <p className='poll-info'><span><img className='card-avatar' src={avatarURL} alt={name} /><span>{name} wonders...</span></span><span className='submit-date'>{formatDate(timestamp)}</span></p>
+          <hr />
+          <p className='poll-text center-text'>Would you rather</p>
         </div>
-        <p className='center-text'>Would you rather</p>
         <Link to={`/poll/${id}`} className='poll-link'>
           <div className='poll-options'>
-            <div className={`option-one ${optionOne.votes.includes(authedUser) ? 'choice' : 'not-choice'}`}>
+            <div className={`option-one ${optionOne.votes.includes(authedUser) && 'choice'}`}>
               {optionOne.text}
+              {optionOne.votes.includes(authedUser) && ' ✔'}
             </div>
-            <div className={`option-two ${optionTwo.votes.includes(authedUser) ? 'choice' : 'not-choice'}`}>
+            <div className={`option-two ${optionTwo.votes.includes(authedUser) ? 'choice' : ''}`}>
               {optionTwo.text}
+              {optionTwo.votes.includes(authedUser) && ' ✔'}
             </div>
           </div>
         </Link>

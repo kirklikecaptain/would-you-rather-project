@@ -52,8 +52,9 @@ class NewPoll extends Component {
       <div>
         <div className='container'>
           <form onSubmit={this.handleSubmit}>
-            <h3 className='center-text'>New Poll</h3>
+            <h3 className='center-text new-header'>New Poll</h3>
             <hr/>
+            <p className='center-text'>Would you rather</p>
             <div className="row">
               <textarea
                 placeholder='Option One'
