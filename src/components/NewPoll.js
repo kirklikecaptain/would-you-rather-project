@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { handleAddQuestion } from '../actions/questions'
-import Hero from './Hero'
 
 import '../css/_base.css';
 import '../css/NewPoll.css';
@@ -45,14 +44,12 @@ class NewPoll extends Component {
 
   render() {
     const { optionOne, optionTwo, toHome } = this.state
-    // const textLeft = (text) => 280 - text.length
 
     if ( toHome === true ) {
       return <Redirect to='/' />
     }
     return (
       <div>
-        <Hero />
         <div className='container'>
           <form onSubmit={this.handleSubmit}>
             <h3 className='center-text'>New Poll</h3>
@@ -63,28 +60,18 @@ class NewPoll extends Component {
                 value={optionOne}
                 onChange={this.handleOne}
                 className='textarea'
-                maxLength={280}
+                maxLength={130}
                 rows='3'>
               </textarea>
-              {/* {textLeft(optionOne.length) <= 100 &&
-                <div className='poll-length'>
-                  {textLeft(optionOne.length)}
-                </div>
-              } */}
               <div className='or'>or</div>
               <textarea
                 placeholder='Option Two'
                 value={optionTwo}
                 onChange={this.handleTwo}
                 className='textarea'
-                maxLength={280}
+                maxLength={130}
                 rows='3'>
               </textarea>
-              {/* {textLeft(optionTwo.length) <= 100 &&
-                <div className='poll-length'>
-                  {textLeft(optionTwo.length)}
-                </div>
-              } */}
             </div>
             <div className='left-align'>
               <button

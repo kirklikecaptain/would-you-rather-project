@@ -6,6 +6,8 @@ import Nav from './Nav'
 import PollPage from './PollPage'
 import NewPoll from './NewPoll'
 import ListNewPolls from './ListNewPolls'
+import ListAnsweredPolls from './ListAnsweredPolls'
+import Leaderboard from './Leaderboard'
 import LoadingBar from 'react-redux-loading-bar'
 import '../css/_base.css';
 import '../css/App.css';
@@ -28,6 +30,8 @@ class App extends Component {
                 <Route path='/' exact component={ListNewPolls} />
                 <Route path='/poll/:id' component={PollPage} />
                 <Route path='/new' component={NewPoll} />
+                <Route path='/answered' component={ListAnsweredPolls} />
+                <Route path='/leaderboard' component={Leaderboard} />
               </div>}
         </Fragment>
       </Router>

@@ -5,9 +5,13 @@
 }
 
 .vote-button {
-  z-index: 1000;
+  z-index: 100;
 }
 
 .first-op {
-  background: red;
+  background: #d32f2f;
+}
+
+.second-op {
+  background: #0097A7;
 }

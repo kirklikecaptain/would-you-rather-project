@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Poll from './Poll'
-import Hero from './Hero'
 
 class ListNewPolls extends Component {
   render() {
     return (
       <div>
-        <Hero />
         <div className='container'>
+          {this.props.unansweredQuestions.length === 0 && <div className='center-text'>No more polls to answer.<br/><Link to='/new'>Try creating a new one!</Link></div>}
           <ul>
-            {this.props.questionIds.map((id) => (
+            {this.props.unansweredQuestions.map((id) => (
               <li key={id}>
                 <Poll id={id} />
               </li>
@@ -22,11 +22,16 @@ class ListNewPolls extends Component {
   }
 }
 
-function mapStateToProps({ questions }) {
+function mapStateToProps({ questions, users, authedUser }) {
+  const user = users[authedUser]
+  //TODO
+
+  const sortedQuestions = Object.keys(questions).sort((a,b) => questions[b].timestamp - questions[a].timestamp)
+  const unansweredQuestions = sortedQuestions.filter(id => !user.answers.hasOwnProperty(id))
+
   return {
-    questionIds: Object.keys(questions)
-      .sort((a,b) => questions[b].timestamp - questions[a].timestamp)
-  };
+    unansweredQuestions
+  }
 }
 
 export default connect(mapStateToProps)(ListNewPolls)

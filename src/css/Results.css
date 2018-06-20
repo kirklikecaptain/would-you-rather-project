@@ -1,0 +1,8 @@
+.scoreboard {
+  display: flex;
+}
+
+.score-col {
+  width: 50%;
+  padding: 0px 16px;
+}

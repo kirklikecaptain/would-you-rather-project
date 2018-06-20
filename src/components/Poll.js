@@ -7,11 +7,11 @@ import '../css/Poll.css';
 class Poll extends Component {
 
   render() {
-    const { question } = this.props
+    const { question, authedUser } = this.props
     const { id, name, avatarURL, timestamp, optionOne, optionTwo } = question
 
     if (question === null) {
-      return <p>This does not exist</p>
+      return <p>This poll does not exist</p>
     }
 
     return (
@@ -19,15 +19,14 @@ class Poll extends Component {
         <div className='poll-data'>
           <p className='poll-info'><span><img className='card-avatar' src={avatarURL} alt={name} /><span>{name} wonders...</span></span><span className='submit-date'>{formatDate(timestamp)}</span></p>
         </div>
+        <p className='center-text'>Would you rather</p>
         <Link to={`/poll/${id}`} className='poll-link'>
           <div className='poll-options'>
-            <div className='option-one'>
+            <div className={`option-one ${optionOne.votes.includes(authedUser) ? 'choice' : 'not-choice'}`}>
               {optionOne.text}
-              {optionOne.votes.length}
             </div>
-            <div className='option-two'>
+            <div className={`option-two ${optionTwo.votes.includes(authedUser) ? 'choice' : 'not-choice'}`}>
               {optionTwo.text}
-              {optionTwo.votes.length}
             </div>
           </div>
         </Link>
@@ -42,6 +41,7 @@ function mapStateToProps({authedUser, users, questions}, { id }) {
 
   return {
     authedUser,
+    users,
     question: question
       ? formatQuestion(question, users[question.author])
       : null

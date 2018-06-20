@@ -21,7 +21,7 @@
   width: 50%;
   padding: 60px;
   text-align: center;
-  color: white;
+  color: rgba(255,255,255,0.7);
   font-size: 26px;
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@
 }
 
 .option-one {
-  background: #333;
+  background: #e53935;
   position: relative;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .option-two {
-  background: #999;
+  background: #00ACC1;
 }
 
 .poll-data {
@@ -80,4 +80,8 @@
 
 .submit-date {
   color: #999;
+}
+
+.choice {
+  font-size: 36px;
 }

@@ -18,6 +18,17 @@ function Nav () {
               New Poll
             </NavLink>
           </li>
+          <li>
+            <NavLink to='/answered' exact className='nav-link' activeClassName='active'>
+              History
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/leaderboard' exact className='nav-link' activeClassName='active'>
+              Leaderboard
+            </NavLink>
+          </li>
+
         </ul>
         <NavLink to='/signin' exact className='nav-link' activeClassName='active'>
           Sign in
