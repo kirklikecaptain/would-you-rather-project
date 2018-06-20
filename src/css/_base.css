@@ -11,6 +11,10 @@
   text-align: center;
 }
 
+a {
+  color: #2196F3;
+}
+
 hr {
     display: block;
     height: 1px;
@@ -35,6 +39,14 @@ button:disabled {
 .left-align {
   display: flex;
   justify-content: flex-end;
+}
+
+.no-more {
+  margin-top: 32px;
+  border-radius: 3px;
+  padding: 32px;
+  background: white;
+
 }
 
 /*handle keyboard navigators*/

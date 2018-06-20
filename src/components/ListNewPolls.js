@@ -8,7 +8,12 @@ class ListNewPolls extends Component {
     return (
       <div>
         <div className='container'>
-          {this.props.unansweredQuestions.length === 0 && <div className='center-text'>No more polls to answer.<br/><Link to='/new'>Try creating a new one!</Link></div>}
+          {this.props.unansweredQuestions.length === 0 &&
+            <div className='center-text no-more'>
+              <p><span role="img" aria-label="Trophy">🏆</span></p>
+              <p>Nice job! You've answered all available polls.</p>
+              <p><Link to='/new'>Try creating one for others to answer!</Link></p>
+            </div>}
           <ul>
             {this.props.unansweredQuestions.map((id) => (
               <li key={id}>
@@ -24,8 +29,6 @@ class ListNewPolls extends Component {
 
 function mapStateToProps({ questions, users, authedUser }) {
   const user = users[authedUser]
-  //TODO
-
   const sortedQuestions = Object.keys(questions).sort((a,b) => questions[b].timestamp - questions[a].timestamp)
   const unansweredQuestions = sortedQuestions.filter(id => !user.answers.hasOwnProperty(id))
 

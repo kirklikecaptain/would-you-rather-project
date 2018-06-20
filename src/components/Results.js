@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import '../css/Results.css';
 
 class Results extends Component {
@@ -12,26 +13,26 @@ class Results extends Component {
         <div className='score-col'>
           <p className="center-text">{optionOne.votes.length} Vote{optionOne.votes.length !== 1 && 's'}</p>
           <hr/>
-          <ul>
+          <ol>
             {optionOne.votes.map((user) => (
                 <li key={user}>
-                  <p>@{user}</p>
+                  <p>{user}</p>
                 </li>
               ))}
-          </ul>
+          </ol>
         </div>
         <div className='score-col'>
           <p className="center-text">{optionTwo.votes.length} Vote{optionTwo.votes.length !== 1 && 's'}</p>
           <hr/>
-          <ul>
+          <ol>
             {optionTwo.votes.map((user) => (
               <li key={user}>
-              <p>@{user}</p>
+              <p>{user}</p>
               </li>
             ))}
-          </ul>
-
+          </ol>
         </div>
+        <div className='center-text another-poll'><Link to='/'>Answer Another Poll</Link></div>
       </div>
     )
   }

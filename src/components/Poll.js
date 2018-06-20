@@ -19,7 +19,7 @@ class Poll extends Component {
         <div className='poll-data'>
           <p className='poll-info'><span><img className='card-avatar' src={avatarURL} alt={name} /><span>{name} wonders...</span></span><span className='submit-date'>{formatDate(timestamp)}</span></p>
           <hr />
-          <p className='poll-text center-text'>Would you rather</p>
+          <h3 className='poll-text center-text'>Would you rather</h3>
         </div>
         <Link to={`/poll/${id}`} className='poll-link'>
           <div className='poll-options'>
