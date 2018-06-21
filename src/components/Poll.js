@@ -7,11 +7,12 @@ import '../css/Poll.css';
 class Poll extends Component {
 
   render() {
+
     const { question, authedUser } = this.props
     const { id, name, avatarURL, timestamp, optionOne, optionTwo } = question
 
     if (question === null) {
-      return <p>This poll does not exist</p>
+      return <p className='error'>This poll does not exist</p>
     }
 
     return (

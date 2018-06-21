@@ -18,7 +18,7 @@ class Signin extends Component {
     return (
       <div className='container'>
         <div className='signin-card'>
-          <h3 className='center-text signin-header'>Who dis?</h3>
+          <h3 className='center-text signin-header'>Choose an account</h3>
           <hr/>
           <ul>
             {userList.map((user) => (

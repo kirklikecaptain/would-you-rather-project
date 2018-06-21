@@ -1,3 +1,9 @@
+# To run this app
+* clone to a local directory
+* run `yarn install` to install dependencies
+* run `yarn start` to run a development server
+
+
 # Would You Rather Project
 
 This is the starter code for the final assessment project for Udacity's React & Redux course.

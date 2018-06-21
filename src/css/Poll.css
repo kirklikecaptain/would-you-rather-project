@@ -93,3 +93,9 @@
 .choice {
   font-size: 38px;
 }
+
+.error {
+  background: white;
+  text-align: center;
+  padding: 80px;
+}

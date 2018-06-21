@@ -29,23 +29,23 @@ class Nav extends Component {
         <div className='container nav-container'>
           <ul className='nav-bar'>
             <li>
-              <NavLink to='/' exact className='nav-link'>
-                Home
+              <NavLink to='/' exact activeClassName="active" className='nav-link'>
+                New
               </NavLink>
             </li>
             <li>
-              <NavLink to='/answered' exact className='nav-link'>
+              <NavLink to='/answered' exact  activeClassName="active" className='nav-link'>
                 History
               </NavLink>
             </li>
             <li>
-              <NavLink to='/leaderboard' exact className='nav-link'>
+              <NavLink to='/leaderboard' exact activeClassName="active" className='nav-link'>
                 Leaderboard
               </NavLink>
             </li>
             <li>
-              <NavLink to='/new' exact className='nav-link'>
-                New Poll
+              <NavLink to='/add' exact activeClassName="active" className='nav-link'>
+                Add Poll
               </NavLink>
             </li>
 

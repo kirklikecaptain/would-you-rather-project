@@ -24,13 +24,14 @@ class App extends Component {
       <Router>
         <Fragment>
           <LoadingBar />
+
           {this.props.signedOut === true
             ? <Signin />
             : <div>
                 <Nav />
                 <Route path='/' exact component={ListNewPolls} />
                 <Route path='/poll/:id' component={PollPage} />
-                <Route path='/new' component={NewPoll} />
+                <Route path='/add' component={NewPoll} />
                 <Route path='/answered' component={ListAnsweredPolls} />
                 <Route path='/leaderboard' component={Leaderboard} />
               </div>}
