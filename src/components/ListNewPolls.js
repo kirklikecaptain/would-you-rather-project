@@ -12,7 +12,7 @@ class ListNewPolls extends Component {
             <div className='center-text no-more'>
               <p><span role="img" aria-label="Trophy">🏆</span></p>
               <p>Nice job! You've answered all available polls.</p>
-              <p><Link to='/new'>Try creating one for others to answer!</Link></p>
+              <p><Link to='/add'>Try creating one for others to answer!</Link></p>
             </div>}
           <ul>
             {this.props.unansweredQuestions.map((id) => (
