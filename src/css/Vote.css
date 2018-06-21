@@ -10,19 +10,19 @@
 }
 
 .first-op {
-  background: #00ACC1;
+  background: #03A9F4;
 }
 
 .first-op:hover {
-  background: #26C6DA;
+  background: #4FC3F7;
   transform: translateY(-1px);
 }
 
 .second-op {
-  background: #5E35B1;
+  background: #00BCD4;
 }
 
 .second-op:hover {
-  background: #7E57C2;
+  background: #4DD0E1;
   transform: translateY(-1px);
 }

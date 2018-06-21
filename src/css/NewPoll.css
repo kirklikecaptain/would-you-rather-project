@@ -34,7 +34,7 @@ form {
 }
 
 .textarea:focus {
-  border: 1px solid #1E88E5;
+  border: 1px solid #FFC107;
 }
 
 .submit-button {

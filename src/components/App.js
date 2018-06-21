@@ -8,6 +8,7 @@ import NewPoll from './NewPoll'
 import ListNewPolls from './ListNewPolls'
 import ListAnsweredPolls from './ListAnsweredPolls'
 import Leaderboard from './Leaderboard'
+import Signin from './Signin'
 import LoadingBar from 'react-redux-loading-bar'
 import '../css/_base.css';
 import '../css/App.css';
@@ -23,10 +24,10 @@ class App extends Component {
       <Router>
         <Fragment>
           <LoadingBar />
-          <Nav />
-          {this.props.loading === true
-            ? null
+          {this.props.signedOut === true
+            ? <Signin />
             : <div>
+                <Nav />
                 <Route path='/' exact component={ListNewPolls} />
                 <Route path='/poll/:id' component={PollPage} />
                 <Route path='/new' component={NewPoll} />
@@ -41,7 +42,7 @@ class App extends Component {
 
 function mapStateToProps ({ authedUser }) {
   return {
-    loading: authedUser === null
+    signedOut: authedUser === null
   }
 }
 

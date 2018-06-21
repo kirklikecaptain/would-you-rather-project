@@ -1,42 +1,62 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
 import '../css/_base.css'
 import '../css/Nav.css'
+import { Redirect } from 'react-router-dom'
+import { signOut } from '../actions/authedUser'
 
-function Nav () {
-  return (
-    <nav className='nav'>
-      <div className='container nav-container'>
-        <ul className='nav-bar'>
-          <li>
-            <NavLink to='/' exact className='nav-link' activeClassName='active'>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/new' exact className='nav-link' activeClassName='active'>
-              New Poll
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/answered' exact className='nav-link' activeClassName='active'>
-              History
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/leaderboard' exact className='nav-link' activeClassName='active'>
-              Leaderboard
-            </NavLink>
-          </li>
+class Nav extends Component {
 
-        </ul>
-        <NavLink to='/signin' exact className='nav-link' activeClassName='active'>
-          Sign in
-        </NavLink>
-      </div>
-    </nav>
-  )
+  state = {
+    signOut: false
+  }
+
+  handleSignout = (e) => {
+    const { dispatch } = this.props
+    e.preventDefault()
+    dispatch(signOut())
+    this.setState(() => ({ signOut: true }))
+  }
+
+  render() {
+    if ( signOut === true ) {
+      return <Redirect to='/' />
+    }
+
+    return (
+      <nav className='nav'>
+        <div className='container nav-container'>
+          <ul className='nav-bar'>
+            <li>
+              <NavLink to='/' exact className='nav-link'>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/answered' exact className='nav-link'>
+                History
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/leaderboard' exact className='nav-link'>
+                Leaderboard
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/new' exact className='nav-link'>
+                New Poll
+              </NavLink>
+            </li>
+
+          </ul>
+          <button className='sign-out' onClick={(e) => this.handleSignout(e)}>Sign Out</button>
+        </div>
+      </nav>
+    )
+  }
+
 }
 
 
-export default Nav
+export default connect()(Nav)

@@ -2,14 +2,16 @@
   display: block;
   text-decoration: none;
   color: #333;
-  margin-top: 20px;
+  margin-top: 16px;
   background: white;
   border-radius: 3px;
   overflow: hidden;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
 }
 
 .poll-options {
   display: flex;
+  justify-content: space-between;
 }
 
 .poll-link {
@@ -21,7 +23,7 @@
   padding: 16px 32px;
   width: 50%;
   text-align: center;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.9);
   font-size: 26px;
   display: flex;
   align-items: center;
@@ -29,7 +31,7 @@
 }
 
 .option-one {
-  background: #00ACC1;
+  background: #81D4FA;
   position: relative;
 }
 
@@ -50,16 +52,16 @@
 }
 
 .option-two {
-  background: #5E35B1;
+  background: #00BCD4;
 }
 
 .poll-data {
-  padding: 10px 16px;
+  padding: 14px 16px 16px 16px;
 }
 
 .poll-text {
   margin: 0;
-  padding-top: 10px;
+  padding-top: 16px;
 }
 
 .poll-votes {
