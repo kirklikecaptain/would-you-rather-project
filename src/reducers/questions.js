@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS, ADD_QUESTIONS, ANSWER_QUESTION } from '../actions/questions'
+import { RECEIVE_QUESTIONS, ADD_QUESTIONS, ANSWER_QUESTION } from '../actions/_constants'
 
 export default function questions (state = {} , action) {
 

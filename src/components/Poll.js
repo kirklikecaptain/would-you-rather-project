@@ -9,11 +9,12 @@ class Poll extends Component {
   render() {
 
     const { question, authedUser } = this.props
-    const { id, name, avatarURL, timestamp, optionOne, optionTwo } = question
 
     if (question === null) {
-      return <p className='error'>This poll does not exist</p>
+      return <p className='error'>-404-<br/>Whoops.<br/>This poll does not exist...</p>
     }
+
+    const { id, name, avatarURL, timestamp, optionOne, optionTwo } = question
 
     return (
       <div className='poll-card'>
@@ -22,7 +23,7 @@ class Poll extends Component {
           <hr />
           <h3 className='poll-text center-text'>Would you rather</h3>
         </div>
-        <Link to={`/poll/${id}`} className='poll-link'>
+        <Link to={`/questions/${id}`} className='poll-link'>
           <div className='poll-options'>
             <div className={`option-one ${optionOne.votes.includes(authedUser) && 'choice'}`}>
               {optionOne.text}

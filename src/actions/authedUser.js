@@ -1,5 +1,4 @@
-export const SET_AUTHED_USER = 'SET_AUTHED_USER'
-export const SIGN_OUT = 'SIGN_OUT'
+import { SIGN_OUT, SET_AUTHED_USER } from './_constants'
 
 export function setAuthedUser (id) {
   return {
